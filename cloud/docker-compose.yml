@@ -1,0 +1,23 @@
+version: "3.5"
+
+services:
+
+  wallet-app:
+    image:  wallet-app:latest
+    expose:
+      - 8080
+    ports:
+    - 8080:8080
+    networks:
+      - wallet
+
+  wallet-portal:
+    image:  wallet-portal:latest
+    expose:
+      - 8082
+    ports:
+      - 8085:8082
+    networks:
+      - wallet
+networks:
+  wallet:
